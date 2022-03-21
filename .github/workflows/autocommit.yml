@@ -1,4 +1,4 @@
-name: Commit [Bot]🤖
+name: commits[Bot]🤖
 
 on:
 
@@ -31,20 +31,7 @@ jobs:
           git config --local user.name "manho30"
           git add -A
           
-          arr[0]="🤖[bot]💩 commit with success."
-          arr[1]="🤖[bot]😽 commit with success."
-          arr[2]="🤖[bot]🐸 commit with success."
-          arr[3]="🤖[bot]🐰 commit with success."
-          arr[4]="🤖[bot]🍉 commit with success."
-          arr[5]="🤖[bot]🐼 commit with success."
-          arr[6]="🤖[bot]🍗 commit with success."
-          arr[7]="🤖[bot]🚀 commit with success."
-          arr[8]="🤖[bot]🌝 commit with success."
-          arr[9]="🤖[bot]⭐ commit with success."
-          
-          rand=$[$RANDOM % ${#arr[@]}]
-          
-          git commit -m "${arr[$rand]}"
+          git commit -m "🤖[bot] commit ✅"
           
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
