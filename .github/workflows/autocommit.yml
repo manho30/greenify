@@ -9,6 +9,8 @@ on:
   schedule:
   - cron: "*/5 * * * *" #adding cron job
 
+  workflow_dispatch:
+
 jobs:
   auto_commit:
     runs-on: ubuntu-latest
