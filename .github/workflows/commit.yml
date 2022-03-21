@@ -32,7 +32,7 @@ jobs:
           git add -A
           
           
-          git commit -m "🤖[bot] commit✅"
+          git commit -m "🤖[bot] commit ✔️ "
           
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
