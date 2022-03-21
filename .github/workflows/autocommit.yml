@@ -22,7 +22,7 @@ jobs:
 
       - name: Modify last update
         run: |
-          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          d=`date '[Commit by bot] %a %d %b %Y at %H:%M:%S'`
           echo $d > LAST_UPDATED
           
       - name: Commit changes
