@@ -26,7 +26,7 @@ jobs:
       - name: Commit changes
         run: |
           git config --local user.email "manhochan30@gmail.com"
-          git config --local user.name "manho"
+          git config --local user.name "manho30"
           git add -A
           
           arr[0]="🤖[bot]💩 commit with success."
