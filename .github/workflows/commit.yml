@@ -24,7 +24,7 @@ jobs:
         run: |
           original = `curl "https://raw.githubusercontent.com/manho30/all-green-commit/master/LAST_UPDATED"`
           d =`date '+%a %d %b %Y at %H:%M:%S'`
-          echo "$original\n$d\n" > LAST_UPDATED
+          echo "${original}\n{$d}\n" > LAST_UPDATED
           
       - name: Commit changes
         run: |
