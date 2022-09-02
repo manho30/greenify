@@ -22,7 +22,7 @@ jobs:
 
       - name: Modify last update
         run: |
-          original = curl https://raw.githubusercontent.com/manho30/all-green-commit/master/LAST_UPDATED
+          original = curl -X GET https://raw.githubusercontent.com/manho30/all-green-commit/master/LAST_UPDATED
           d=`date '+%a %d %b %Y at %H:%M:%S'`
           echo $original + $d + '\n' > LAST_UPDATED
           
