@@ -22,7 +22,6 @@ jobs:
 
       - name: Modify last update
         run: |
-          #o =`curl "https://raw.githubusercontent.com/manho30/all-green-commit/master/LAST_UPDATED"`
           d =`date '+%a %d %b %Y at %H:%M:%S'`
           echo "${d}" > LAST_UPDATED
           
