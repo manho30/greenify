@@ -25,9 +25,3 @@ jobs:
           branch: "auto-merge-branch"
           delete-branch: true
           labels: "auto-generated"
-      - name: Merge Pull Request
-        uses: peter-evans/merge-pull-request@v2
-        with:
-          merge-method: "squash"
-          commit-message: "auto-merge"
-          delete-branch: true
