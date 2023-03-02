@@ -31,7 +31,7 @@ jobs:
       - name: Merge PR
         uses: reitermarkus/automerge@v2
         with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: squash
           do-not-merge-labels: never-merge
           required-labels: auto-generated
