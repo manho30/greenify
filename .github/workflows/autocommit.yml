@@ -33,7 +33,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: squash
-          do-not-merge-labels: never-merge
           required-labels: auto-generated
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: true
