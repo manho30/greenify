@@ -28,4 +28,5 @@ jobs:
           body: 'This commit is create by automated'
           signoff: true
           reviewers: manho30
+          branch-suffix: short-commit-hash
           
