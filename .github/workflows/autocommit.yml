@@ -25,3 +25,7 @@ jobs:
           branch: "auto-merge-branch"
           delete-branch: true
           labels: "auto-generated"
+          body: 'This commit is create by automated'
+          signoff: true
+          reviewers: manho30
+          
