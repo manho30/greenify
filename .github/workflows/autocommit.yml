@@ -7,7 +7,7 @@ on:
       - master
       
   schedule:
-  - cron: "*/15 * * * *" #adding cron job
+  - cron: "0 */12 * * *" # every 12h 
 
   workflow_dispatch:
 
