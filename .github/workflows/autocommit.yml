@@ -36,4 +36,6 @@ jobs:
           required-labels: auto-generated
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: true
+          pull-request-author-associations: manho30
+          squash-commit-title: 'Auto-commit merged'
           
