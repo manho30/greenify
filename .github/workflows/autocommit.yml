@@ -1,4 +1,4 @@
-name: auto-commit
+name: Auto Commit
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
   schedule:
     - cron: '0 */12 * * *'
 jobs:
-  commit:
+  merge_pull_request:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,9 +17,17 @@ jobs:
           d=`TZ='Asia/Kuala_Lumpur' date '+%a, %d %b %Y %T %z'`
           echo "Last updated: $d (Kuala Lumpur Standard Time (UTC+0800))" > LAST_UPDATED
           echo "Last updated: $d (Kuala Lumpur Standard Time (UTC+0800))" > README.md
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -a -m "auto-commit"
-          git push
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "auto-commit"
+          title: "Auto-generated pull request"
+          branch: "auto-merge-branch"
+          delete-branch: true
+          labels: "auto-generated"
+      - name: Merge Pull Request
+        uses: peter-evans/merge-pull-request@v2
+        with:
+          merge-method: "squash"
+          commit-message: "auto-merge"
+          delete-branch: true
