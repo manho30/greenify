@@ -29,12 +29,12 @@ jobs:
           signoff: true
           
       - name: Merge PR
-        - uses: reitermarkus/automerge@v2
-          with:
-            token: ${{ secrets.MY_GITHUB_TOKEN }}
-            merge-method: squash
-            do-not-merge-labels: never-merge
-            required-labels: auto-generated
-            pull-request: ${{ github.event.inputs.pull-request }}
-            dry-run: true
+        uses: reitermarkus/automerge@v2
+        with:
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          merge-method: squash
+          do-not-merge-labels: never-merge
+          required-labels: auto-generated
+          pull-request: ${{ github.event.inputs.pull-request }}
+          dry-run: true
           
