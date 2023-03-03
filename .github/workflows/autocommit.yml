@@ -8,6 +8,7 @@ on:
     - cron: '0 */12 * * *'
 jobs:
   merge_pull_request:
+    if: github.event.pull_request.merged == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,27 +16,14 @@ jobs:
       - name: Set Last Updated Time
         run: |
           d=`TZ='Asia/Kuala_Lumpur' date '+%a, %d %b %Y %T %z'`
-          echo "Last updated: $d (Kuala Lumpur Standard Time (UTC+0800))" > LAST_UPDATED
-          echo "Last updated: $d (Kuala Lumpur Standard Time (UTC+0800))" > README.md
+          echo "Last updated: `$d` Kuala Lumpur Standard Time (UTC+0800)" > README.md
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: "auto-commit"
+          commit-message: "auto-commit by github actions"
           title: "Auto-generated pull request"
           branch: "auto-merge-branch"
           delete-branch: true
           labels: "auto-generated"
           body: 'This commit is create by automated'
           signoff: true
-          
-      - name: Merge PR
-        uses: reitermarkus/automerge@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: squash
-          required-labels: auto-generated
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
-          pull-request-author-associations: manho30
-          squash-commit-title: 'Auto-commit merged'
-          
